@@ -70,6 +70,14 @@
             color: var(--text-primary);
             text-decoration: none;
             letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .nav-logo img {
+            height: 32px;
+            width: auto;
         }
 
         .nav-logo span { color: var(--gold); }
@@ -777,7 +785,7 @@
 <body>
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#" class="nav-logo">Column <span>E</span></a>
+        <a href="#" class="nav-logo"><img src="columne-logo.png" alt="Column E logo">Column <span>E</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#vision" onclick="closeNav()">Vision</a></li>
             <li><a href="#philosophy" onclick="closeNav()">Philosophy</a></li>
