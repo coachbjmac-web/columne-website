@@ -382,13 +382,13 @@
         /* ───── Philosophy ───── */
         .philosophy-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
             margin-top: 3.5rem;
         }
 
         .phil-card {
-            padding: 2.5rem 2rem;
+            padding: 1.5rem 1.3rem;
             border: 1px solid var(--border-subtle);
             border-radius: 2px;
             transition: all 0.4s ease;
@@ -413,22 +413,22 @@
         .phil-card:hover::before { transform: scaleX(1); }
 
         .phil-icon {
-            width: 36px;
-            height: 36px;
-            margin-bottom: 1.5rem;
+            width: 28px;
+            height: 28px;
+            margin-bottom: 1rem;
             color: var(--gold);
             opacity: 0.7;
         }
 
         .phil-card h3 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .phil-card p {
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             color: var(--text-secondary);
             line-height: 1.65;
         }
@@ -771,7 +771,7 @@
             .nav-toggle { display: flex; z-index: 101; }
 
             .vision-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .philosophy-grid { grid-template-columns: 1fr; }
+            .philosophy-grid { grid-template-columns: repeat(2, 1fr); }
             .strategies-grid { grid-template-columns: 1fr; }
             .founder-inner { grid-template-columns: 1fr; gap: 2rem; }
             .founder-visual { width: 140px; height: 170px; }
