@@ -380,6 +380,21 @@
         }
 
         /* ───── Philosophy ───── */
+        #philosophy {
+            position: relative;
+            overflow: hidden;
+        }
+        .philosophy-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/philosophy-bg.png') center/cover no-repeat;
+            opacity: 0.06;
+            filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        #philosophy .container { position: relative; z-index: 1; }
+
         .philosophy-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -434,7 +449,21 @@
         }
 
         /* ───── Strategies ───── */
-        .strategies { background: var(--bg-primary); }
+        .strategies {
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .strategies-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/chalkboard-bg.png') center/cover no-repeat;
+            opacity: 0.06;
+            filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .strategies .container { position: relative; z-index: 1; }
 
         .strategies-grid {
             display: grid;
@@ -862,6 +891,7 @@
     <!-- Philosophy -->
     <div class="divider"></div>
     <section id="philosophy">
+        <div class="philosophy-bg"></div>
         <div class="container">
             <p class="section-label reveal">Investment Philosophy</p>
             <h2 class="section-heading reveal">Disciplined execution through<br>quantitative precision</h2>
@@ -945,6 +975,7 @@
     <!-- Strategies -->
     <div class="divider"></div>
     <section id="strategies" class="strategies">
+        <div class="strategies-bg"></div>
         <div class="container">
             <p class="section-label reveal">Investment Strategies</p>
             <h2 class="section-heading reveal">Four models powering the<br>Column E approach</h2>
