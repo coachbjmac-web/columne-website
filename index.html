@@ -152,6 +152,22 @@
             -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
         }
 
+        .hero-logo-bg {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .hero-logo-bg img {
+            width: min(500px, 60vw);
+            height: auto;
+            opacity: 0.06;
+            filter: grayscale(100%);
+        }
+
         .hero-content {
             position: relative;
             text-align: center;
@@ -761,6 +777,9 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-grid"></div>
+        <div class="hero-logo-bg">
+            <img src="columne-logo.png" alt="">
+        </div>
         <div class="hero-content">
             <p class="hero-eyebrow">Column E Management</p>
             <h1 class="hero-title">Navigating the Markets, One Trade at a Time</h1>
