@@ -163,17 +163,11 @@
         .hero-logo-bg {
             position: absolute;
             inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
-
-        .hero-logo-bg img {
-            width: min(500px, 60vw);
-            height: auto;
+            background: url('columne-logo.png') center/cover no-repeat;
             opacity: 0.06;
             filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -315,21 +309,14 @@
 
         .vision-bg {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(700px, 80vw);
+            inset: 0;
+            background: url('img/chess.jpg') center/cover no-repeat;
             opacity: 0.07;
-            pointer-events: none;
-            mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
-        }
-
-        .vision-bg img {
-            width: 100%;
-            height: auto;
             filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
         }
+        .vision .container { position: relative; z-index: 1; }
 
         .vision-inner {
             display: grid;
@@ -835,9 +822,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-grid"></div>
-        <div class="hero-logo-bg">
-            <img src="columne-logo.png" alt="">
-        </div>
+        <div class="hero-logo-bg"></div>
         <div class="hero-content">
             <p class="hero-eyebrow">Column E</p>
             <h1 class="hero-title">Navigating the Markets, One Trade at a Time</h1>
@@ -859,7 +844,7 @@
     <!-- Vision -->
     <div class="divider"></div>
     <section id="vision" class="vision">
-        <div class="vision-bg"><img src="img/chess.jpg" alt=""></div>
+        <div class="vision-bg"></div>
         <div class="container">
             <div class="vision-inner reveal">
                 <div>
