@@ -533,6 +533,23 @@
             color: var(--text-secondary);
         }
 
+        .timeline-item-inner {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .timeline-chart {
+            flex-shrink: 0;
+            width: 100px;
+            height: 40px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-chart { opacity: 0.8; }
+
         /* ───── Founder ───── */
         .founder { background: var(--bg-primary); }
 
@@ -947,40 +964,76 @@
             <h2 class="section-heading reveal">Navigating every regime<br>since the millennium</h2>
             <div class="timeline-container reveal">
                 <div class="timeline-item">
-                    <div class="timeline-year">2000&ndash;02</div>
-                    <div class="timeline-desc">Dot-com bust &mdash; Nasdaq falls 78%, ushering in a multi-year bear market</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2000&ndash;02</div>
+                            <div class="timeline-desc">Dot-com bust &mdash; Nasdaq falls 78%, ushering in a multi-year bear market</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,5 20,8 35,12 50,20 65,28 80,34 95,38" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2003&ndash;07</div>
-                    <div class="timeline-desc">Credit-fueled expansion &mdash; S&amp;P 500 doubles as housing and leverage boom</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2003&ndash;07</div>
+                            <div class="timeline-desc">Credit-fueled expansion &mdash; S&amp;P 500 doubles as housing and leverage boom</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,35 20,30 35,24 50,18 65,13 80,8 95,4" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2008&ndash;09</div>
-                    <div class="timeline-desc">Global Financial Crisis &mdash; banks collapse, markets drop 57% peak to trough</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2008&ndash;09</div>
+                            <div class="timeline-desc">Global Financial Crisis &mdash; banks collapse, markets drop 57% peak to trough</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,5 15,8 25,6 35,14 45,24 55,36 65,34 75,28 85,22 95,18" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2010&ndash;14</div>
-                    <div class="timeline-desc">QE-driven recovery &mdash; central bank intervention reshapes the risk landscape</div>
+                    <div>
+                        <div class="timeline-year">2010&ndash;14</div>
+                        <div class="timeline-desc">QE-driven recovery &mdash; central bank intervention reshapes the risk landscape</div>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2015&ndash;16</div>
-                    <div class="timeline-desc">China devaluation &amp; oil crash &mdash; global growth fears trigger sharp corrections</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2015&ndash;16</div>
+                            <div class="timeline-desc">China devaluation &amp; oil crash &mdash; global growth fears trigger sharp corrections</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,10 20,8 30,12 40,28 50,32 60,26 70,18 80,14 95,10" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-desc">Volmageddon &amp; Fed tightening &mdash; volatility spikes as the yield curve inverts</div>
+                    <div>
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-desc">Volmageddon &amp; Fed tightening &mdash; volatility spikes as the yield curve inverts</div>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-desc">COVID crash &amp; recovery &mdash; fastest 30% decline in history, followed by record stimulus rally</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-desc">COVID crash &amp; recovery &mdash; fastest 30% decline in history, followed by record stimulus rally</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,8 15,10 25,12 32,36 40,34 50,22 60,14 70,8 80,5 95,4" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-desc">Rate hike bear market &mdash; aggressive Fed tightening drives bonds and equities down together</div>
+                    <div class="timeline-item-inner">
+                        <div>
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-desc">Rate hike bear market &mdash; aggressive Fed tightening drives bonds and equities down together</div>
+                        </div>
+                        <svg class="timeline-chart" viewBox="0 0 100 40"><polyline points="5,6 15,10 25,8 35,14 45,12 55,20 65,18 75,26 85,30 95,36" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2023&ndash;25</div>
-                    <div class="timeline-desc">AI-led concentration &mdash; narrow mega-cap leadership tests breadth and traditional diversification</div>
+                    <div>
+                        <div class="timeline-year">2023&ndash;25</div>
+                        <div class="timeline-desc">AI-led concentration &mdash; narrow mega-cap leadership tests breadth and traditional diversification</div>
+                    </div>
                 </div>
             </div>
         </div>
