@@ -522,6 +522,22 @@
             background: var(--gold);
         }
 
+        /* ───── Evolution / Timeline ───── */
+        #evolution {
+            position: relative;
+            overflow: hidden;
+        }
+        .evolution-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/evolution-bg.png') center/cover no-repeat;
+            opacity: 0.06;
+            filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        #evolution .container { position: relative; z-index: 1; }
+
         /* ───── Timeline ───── */
         .timeline-container {
             margin-top: 3.5rem;
@@ -1012,6 +1028,7 @@
     <!-- Evolution -->
     <div class="divider"></div>
     <section id="evolution">
+        <div class="evolution-bg"></div>
         <div class="container">
             <p class="section-label reveal">Market Context</p>
             <h2 class="section-heading reveal">Navigating every regime<br>since the millennium</h2>
