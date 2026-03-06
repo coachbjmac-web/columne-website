@@ -595,7 +595,21 @@
 
 
         /* ───── Founder ───── */
-        .founder { background: var(--bg-primary); }
+        .founder {
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        .founder-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/founder-bg.png') center/cover no-repeat;
+            opacity: 0.06;
+            filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .founder .container { position: relative; z-index: 1; }
 
         .founder-inner {
             display: grid;
@@ -667,7 +681,19 @@
         .contact {
             padding: 6rem 3rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        .contact-bg {
+            position: absolute;
+            inset: 0;
+            background: url('columne-logo.png') center/cover no-repeat;
+            opacity: 0.06;
+            filter: grayscale(100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .contact .container { position: relative; z-index: 1; }
 
         .contact-heading {
             font-family: var(--font-display);
@@ -1076,6 +1102,7 @@
     <!-- Founder -->
     <div class="divider"></div>
     <section id="founder" class="founder">
+        <div class="founder-bg"></div>
         <div class="container">
             <p class="section-label reveal">Leadership</p>
             <div class="founder-inner reveal">
@@ -1102,6 +1129,7 @@
     <!-- Contact -->
     <div class="divider"></div>
     <section id="contact" class="contact">
+        <div class="contact-bg"></div>
         <div class="container reveal">
             <p class="section-label">Contact</p>
             <h2 class="contact-heading">Start a Conversation</h2>
