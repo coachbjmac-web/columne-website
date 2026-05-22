@@ -40,6 +40,59 @@
             overflow-x: hidden;
         }
 
+        /* ───── Accessibility ───── */
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -100px;
+            z-index: 200;
+            padding: 0.75rem 1.25rem;
+            background: var(--gold);
+            color: var(--bg-deep);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .hero-eyebrow,
+            .hero-title,
+            .hero-subtitle,
+            .hero-cta,
+            .scroll-indicator,
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
         /* ───── Navigation ───── */
         nav {
             position: fixed;
@@ -845,6 +898,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#" class="nav-logo"><img src="columne-logo.png" alt="Column E logo">Column <span>E</span></a>
@@ -862,7 +916,7 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="main" tabindex="-1">
         <div class="hero-grid"></div>
         <div class="hero-logo-bg"></div>
         <div class="hero-content">
@@ -1166,17 +1220,22 @@
         navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
         function closeNav() { navLinks.classList.remove('open'); }
 
-        // Scroll reveal
+        // Scroll reveal — respect prefers-reduced-motion
         const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        reveals.forEach(el => observer.observe(el));
+        const motionOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (motionOK) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            reveals.forEach(el => observer.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('visible'));
+        }
     </script>
 </body>
 </html>
